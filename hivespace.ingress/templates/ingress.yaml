@@ -1,0 +1,24 @@
+# Phải đổi service ingress-nginx-controller  thành LoadBalancer
+# kubectl patch svc ingress-nginx-controller -n ingress-nginx -p "{\"spec\": {\"type\": \"LoadBalancer\"}}"
+
+# Chạy minikube tunnel
+#  EXTERNAL-IP  đó sẽ gán vào file  C:\Windows\System32\drivers\etc\hosts
+
+# http://hivespace.local/api/v1/users/signup
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hivespaceapp-ingress
+spec:
+  rules:
+    - host: hivespace.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: hivespaceapp-service
+                port:
+                  number: 80
