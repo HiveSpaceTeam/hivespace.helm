@@ -19,3 +19,7 @@ spec:
         image: dblmint/hivespace-hivespaceapp:129
         ports:
         - containerPort: 8080  
+      volumes:
+        - name: config-volume
+          configMap:
+            name: appsettings-config
