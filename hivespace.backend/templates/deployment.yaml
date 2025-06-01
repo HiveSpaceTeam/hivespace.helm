@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: hivespaceapp
-        image: dblmint/hivespace-hivespaceapp:146
+        image: dblmint/hivespace-hivespaceapp:147
         ports:
         - containerPort: 8080  
         volumeMounts:
