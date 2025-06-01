@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: appsettings-config
+data:
+  appsettings.json: |
+    {
+      "AzureBlobStorage": {
+        "Connectionstring": "DefaultEndpointsProtocol=https;AccountName=youraccount;AccountKey=yourkey;EndpointSuffix=core.windows.net"
+      }
+    }

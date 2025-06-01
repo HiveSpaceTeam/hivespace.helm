@@ -12,7 +12,7 @@ metadata:
   name: hivespaceapp-ingress
 spec:
   rules:
-    - host: hivespace.local
+    - host: {{ .Values.host }}
       http:
         paths:
           - path: /
