@@ -9,7 +9,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: hivespaceapp-ingress
+  name: {{ .Values.host }}
 spec:
   rules:
     - host: hivespace.local
