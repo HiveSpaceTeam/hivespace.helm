@@ -21,8 +21,8 @@ spec:
         - containerPort: 8080  
         volumeMounts:
           - name: config-volume
-            mountPath: config
+            mountPath: /config
       volumes:
         - name: config-volume
           configMap:
-            name: appsettings-config
+            name: hivespace-configmap
