@@ -24,7 +24,7 @@ spec:
           value: {{.Values.ASPNETCORE_ENVIRONMENT}} 
         volumeMounts:
           - name: config-volume
-            mountPath: /app/config
+            mountPath: /app
       volumes:
         - name: config-volume
           configMap:
