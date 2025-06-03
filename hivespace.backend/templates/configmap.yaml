@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: hivespace-configmap
 data:
-  appsettings.secrets.json: |
+  appsettings.json: |
     {
       "AzureBlobStorage": {
         "Connectionstring": "DefaultEndpointsProtocol=https;AccountName=youraccount;AccountKey=yourkey;EndpointSuffix=core.windows.net"
