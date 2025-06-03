@@ -24,7 +24,7 @@ spec:
           value: {{.Values.ASPNETCORE_ENVIRONMENT}} 
         volumeMounts:
         - name: config-volume
-          mountPath: /app
+          mountPath: /app/secrets
           readOnly: true
       volumes:
         - name: config-volume
