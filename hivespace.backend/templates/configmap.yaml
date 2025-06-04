@@ -6,5 +6,5 @@ data:
 {{- $envPath := printf "config/%s/*.json" .Values.ASPNETCORE_ENVIRONMENT }}
 {{- range $path, $content := .Files.Glob $envPath }}
   {{ base $path }}: |
-{{ $content | indent 4 }}
+{{ $content | toString | indent 4 }}
 {{- end }}
