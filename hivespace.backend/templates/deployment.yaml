@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: hivespaceapp
-        image: dblmint/hivespace-hivespaceapp:160
+        image: dblmint/hivespace-hivespaceapp:161
         ports:
         - containerPort: 8080 
         env:
@@ -24,7 +24,7 @@ spec:
           value: {{.Values.ASPNETCORE_ENVIRONMENT}} 
         volumeMounts:
         - name: config-volume
-          mountPath: /config
+          mountPath: /app/config
           readOnly: true
       volumes:
         - name: config-volume
