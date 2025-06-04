@@ -3,9 +3,8 @@ kind: ConfigMap
 metadata:
   name: hivespace-configmap
 data:
-  appsettings.json: |
-    {
-      "AzureBlobStorage": {
-        "Connectionstring": "DefaultEndpointsProtocol=https;AccountName=youraccount;AccountKey=yourkey;EndpointSuffix=core.windows.net"
-      }
-    }
+{{- $envPath := printf "config/%s/*.json" .Values.ASPNETCORE_ENVIRONMENT }}
+{{- range $path, $content := .Files.Glob $envPath }}
+  {{ base $path }}: |
+{{ $content | toString | indent 4 }}
+{{- end }}
