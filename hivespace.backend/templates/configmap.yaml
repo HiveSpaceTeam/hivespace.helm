@@ -3,7 +3,8 @@ kind: ConfigMap
 metadata:
   name: hivespace-configmap
 data:
-{{- range $path, $content := .Files.Glob "config/*.json" }}
+{{- $envPath := printf "config/%s/*.json" .Values.ASPNETCORE_ENVIRONMENT }}
+{{- range $path, $content := .Files.Glob $envPath }}
   {{ base $path }}: |
 {{ $content | indent 4 }}
 {{- end }}
