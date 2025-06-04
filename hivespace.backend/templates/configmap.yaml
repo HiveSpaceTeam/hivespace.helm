@@ -3,8 +3,22 @@ kind: ConfigMap
 metadata:
   name: hivespace-configmap
 data:
-{{- $envPath := printf "config/%s/*.json" .Values.ASPNETCORE_ENVIRONMENT }}
-{{- range $path, $content := .Files.Glob $envPath }}
-  {{ base $path }}: |
-{{ $content | toString | indent 4 }}
-{{- end }}
+  appsettings.json: |
+    {
+        "Logging": {
+            "LogLevel": {
+                "Default": "Information",
+                "Microsoft.AspNetCore": "Warning"
+            }
+        },
+        "AzureBlobStorage": {
+            "ConnectionString": "test"
+        },
+        "Postgres": {
+            "ConnectionString": "Server=hivespace-postgres.postgres.database.azure.com;Database=HiveSpaceDB;Port=5432;User Id=dev5k;Password=Ecommerce0123;Ssl Mode=Require;"
+        },
+        "Redis": {
+            "ConnectionString": "52.175.16.37:6379,password=Ecommerce0123",
+            "InstanceName": "HiveSpace_"
+        }
+    }
