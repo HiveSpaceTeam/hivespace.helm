@@ -1,0 +1,18 @@
+{
+    "Logging": {
+        "LogLevel": {
+            "Default": "Information",
+            "Microsoft.AspNetCore": "Warning"
+        }
+    },
+    "AzureBlobStorage": {
+        "ConnectionString": "DefaultEndpointsProtocol=https;AccountName=hivespacestorage;AccountKey=mdAZ4GooyhbuByYWZ9PgUh1IyALNzCybqM07+XKbQbv5gUEyXDA5UHTjBnJzO0JmfXbiukHgLoYv+ASt2yDPJQ==;EndpointSuffix=core.windows.net"
+    },
+    "Postgres": {
+        "ConnectionString": "Server=hivespace-postgres.postgres.database.azure.com;Database=HiveSpaceDB;Port=5432;User Id=dev5k;Password=Ecommerce0123;Ssl Mode=Require;"
+    },
+    "Redis": {
+        "ConnectionString": "52.175.16.37:6379,password=Ecommerce0123",
+        "InstanceName": "HiveSpace_"
+    }
+}
