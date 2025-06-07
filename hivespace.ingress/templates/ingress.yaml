@@ -10,7 +10,9 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: hivespaceapp-ingress
+  namespace: {{.Values.env}} 
 spec:
+  ingressClassName: nginx
   rules:
     - host: {{ .Values.host }}
       http:
