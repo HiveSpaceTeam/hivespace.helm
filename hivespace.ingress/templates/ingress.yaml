@@ -11,7 +11,7 @@ kind: Ingress
 metadata:
   name: hivespaceapp-ingress
   annotations:
-  nginx.ingress.kubernetes.io/rewrite-target: /
+  nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 spec:
   ingressClassName: nginx
   rules:
